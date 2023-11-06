@@ -291,7 +291,7 @@ nav a:hover::before {
   position: relative;
   width: 70%;
   height: 80%;
-  left: 23%;
+  left: 30%;
   top: 10%;
   bottom: 10%;
   background: rgba(0, 0, 0, 0.5);
@@ -500,7 +500,7 @@ nav a:hover::before {
 
 
 .third-content {
-	text-align: left;
+	text-align: match-parent;
 	padding: 30px;
 }
 
@@ -512,6 +512,7 @@ nav a:hover::before {
 .third-content .first-section .left-content {
 	margin-right: 15px;
 	margin-top: 12px;
+	text-align: left;
 }
 
 .third-content .first-section .right-image {
@@ -525,6 +526,7 @@ nav a:hover::before {
 .third-content .second-section .right-content {
 	margin-left: 15px;
 	margin-top: 12px;
+	text-align: left;
 }
 
 .third-content .second-section .left-image {
@@ -545,13 +547,13 @@ nav a:hover::before {
 	margin-top: 0px;
 }
 .third-content h3 {
-	font-size: 24px;
+	font-size: 30px;
 	text-transform: uppercase;
-	text-align: center;
+	text-align: right;
 	font-weight: 700;
 	color: #fff;
-	width: 800px;
-	letter-spacing: 0.5px;
+	width: max-content;
+	letter-spacing: 2px;
 	border-bottom: 2px solid #fff;
 	display: inline-block;
 	padding-bottom: 10px;
