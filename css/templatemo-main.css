@@ -483,6 +483,7 @@ nav a:hover::before {
 }
 
 
+
 .first-content {
 	padding: 100px;
 	text-align: left;
@@ -690,7 +691,7 @@ nav a:hover::before {
 	color: #fff;
 	text-align: left;
 	border-radius: 6px;
-	padding: 1px 5px;
+	padding: 9px 5px;
 	position: absolute;
 	z-index: 1;
 	bottom: 125%;
