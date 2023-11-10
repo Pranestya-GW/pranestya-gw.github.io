@@ -92,6 +92,49 @@
   width: 16px;
   height: 16px;
 }
+/*dropdown*/
+.dropbtn {
+	background-color:transparent;
+	color: yellow;
+	padding: 0px;
+	font-size: 0px;
+	border: none;
+  }
+  
+  .dropdown {
+	position: relative;
+	display: inline-block;
+  }
+  
+  .dropdown-content {
+	display: none;
+	position: relative;
+	background-color: transparent;
+	z-index: 1;
+  }
+  
+  .dropdown-content a {
+	border-bottom: 2px solid yellow;
+	font-size: 15px;
+	color: yellow;
+	padding: 0px 0px;
+	text-decoration: none;
+	display: inline-block;
+  }
+  .dropdown-content simple{
+	border-bottom: 0px solid yellow;
+	font-size: 15px;
+	color: yellow;
+	padding: 0px 0px;
+	text-decoration: none;
+	display: inline-block;
+  }
+  
+  .dropdown-content a:hover {background-color:transparent;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: transparent;}
 /*icon */
   
   .fa:hover {
@@ -623,6 +666,65 @@ nav a:hover::before {
 	text-align: left;
 }
 
+.third-content .first-section .right-content {
+	display: inline-block;
+	margin-left: 0px;
+	margin-top: 12px;
+	text-align: left;
+}
+/* button click popup */
+.third-content .first-section .right-content .main-btn{
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.third-content .first-section .right-content .main-btn .popuptext{
+	visibility: hidden;
+	width: 160px;
+	background-color: #555;
+	color: #fff;
+	text-align: left;
+	border-radius: 6px;
+	padding: 1px 5px;
+	position: absolute;
+	z-index: 1;
+	bottom: 125%;
+	left: 50%;
+	margin-left: -80px;
+}
+
+.third-content .first-section .right-content .main-btn .popuptext::after{
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #555 transparent transparent transparent;
+}
+
+.third-content .first-section .right-content .main-btn .show{
+	visibility: visible;
+	-webkit-animation: fadeIn 1s;
+	animation: fadeIn 1s;
+}
+
+  @-webkit-keyframes fadeIn {
+	from {opacity: 0;} 
+	to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+	from {opacity: 0;}
+	to {opacity:1 ;}
+  }
+
 .third-content .first-section .right-image {
 	margin-left: 15px;
 }
@@ -636,6 +738,66 @@ nav a:hover::before {
 	margin-top: 12px;
 	text-align: left;
 }
+
+.third-content .second-section .left-content {
+	display: inline-block;
+	margin-left: 0px;
+	margin-top: 12px;
+	text-align: left;
+}
+
+.third-content .second-section .left-content .main-btn{
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.third-content .second-section .left-content .main-btn .popuptext{
+	visibility: hidden;
+	width: 160px;
+	background-color: #555;
+	color: #fff;
+	text-align: left;
+	border-radius: 6px;
+	padding: 1px 5px;
+	position: absolute;
+	z-index: 1;
+	bottom: 125%;
+	left: 50%;
+	margin-left: -80px;
+}
+
+.third-content .second-section .left-content .main-btn .popuptext::after{
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #555 transparent transparent transparent;
+}
+
+.third-content .second-section .left-content .main-btn .show{
+	visibility: visible;
+	-webkit-animation: fadeIn 1s;
+	animation: fadeIn 1s;
+}
+
+  @-webkit-keyframes fadeIn {
+	from {opacity: 0;} 
+	to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+	from {opacity: 0;}
+	to {opacity:1 ;}
+  }
+
 
 .third-content .second-section .left-image {
 	margin-right: 15px;
