@@ -686,12 +686,12 @@ nav a:hover::before {
 
 .third-content .first-section .right-content .main-btn .popuptext{
 	visibility: hidden;
-	width: 160px;
+	width: 250px;
 	background-color: #555;
 	color: #fff;
 	text-align: left;
 	border-radius: 6px;
-	padding: 9px 5px;
+	padding: 5px 5px;
 	position: absolute;
 	z-index: 1;
 	bottom: 125%;
@@ -759,7 +759,7 @@ nav a:hover::before {
 
 .third-content .second-section .left-content .main-btn .popuptext{
 	visibility: hidden;
-	width: 160px;
+	width: 250px;
 	background-color: #555;
 	color: #fff;
 	text-align: left;
