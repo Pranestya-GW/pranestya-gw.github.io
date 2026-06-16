@@ -237,22 +237,8 @@
         '&hide_title=true';
     }
 
-    // --- Top languages (github-readme-stats) ---
-    const langsImg = document.getElementById('github-top-langs');
-    if (langsImg) {
-      const bg = isDark ? '1a1a1a' : 'ffffff';
-      const text = isDark ? 'fafafa' : '333333';
-      langsImg.src =
-        'https://github-readme-stats.vercel.app/api/top-langs/' +
-        '?username=Pranestya-GW' +
-        '&layout=compact' +
-        '&hide_title=true' +
-        '&theme=' + (isDark ? 'dark' : 'default') +
-        '&bg_color=' + bg +
-        '&title_color=18d26e' +
-        '&text_color=' + text +
-        '&border_color=' + (isDark ? '333' : 'ddd');
-    }
+    // --- Top languages — hardcoded in HTML, based on file analysis across all repos ---
+    // (no dynamic loading needed — reflects both public and private work)
   }
 
   // Load on page load
