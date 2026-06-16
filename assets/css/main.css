@@ -1474,3 +1474,39 @@ section,
 .contact .php-email-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
+
+/*--------------------------------------------------------------
+# GitHub Stats Section
+--------------------------------------------------------------*/
+.github-stats .stats-card {
+  background: var(--surface-color);
+  padding: 25px 20px;
+  border-radius: 10px;
+  border-top: 3px solid var(--accent-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.github-stats .stats-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(24, 210, 110, 0.15);
+}
+
+.github-stats .stats-card-title {
+  color: var(--accent-color);
+  font-family: var(--heading-font);
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.github-stats .stats-card img {
+  max-width: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.github-stats .stats-card p small {
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+}
