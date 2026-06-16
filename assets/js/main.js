@@ -199,4 +199,66 @@
 
   });
 
+  /**
+   * GitHub Stats — dynamic theme switching
+   * Detects OS color scheme and loads matching stats images.
+   * Listens for live theme changes (e.g., switching dark/light mode).
+   */
+  function loadGitHubStats() {
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    // --- Contribution grid (ghchart.rshah.org) ---
+    // ghchart defaults to white background.
+    // In dark mode we invert it; in light mode we leave as-is.
+    const gridImg = document.getElementById('github-contribution-graph');
+    if (gridImg) {
+      gridImg.src = 'https://ghchart.rshah.org/18d26e/Pranestya-GW';
+      if (isDark) {
+        gridImg.style.filter = 'invert(0.92) hue-rotate(180deg)';
+      } else {
+        gridImg.style.filter = 'none';
+      }
+    }
+
+    // --- Activity graph (github-readme-activity-graph) ---
+    const activityImg = document.getElementById('github-activity-graph');
+    if (activityImg) {
+      const theme = isDark ? 'github-dark' : 'default';
+      activityImg.src =
+        'https://github-readme-activity-graph.vercel.app/graph' +
+        '?username=Pranestya-GW' +
+        '&theme=' + theme +
+        '&bg_color=' + (isDark ? '1a1a1a' : 'ffffff') +
+        '&color=' + (isDark ? 'fafafa' : '333333') +
+        '&line=18d26e' +
+        '&point=18d26e' +
+        '&area=true' +
+        '&hide_border=true' +
+        '&hide_title=true';
+    }
+
+    // --- Top languages (github-readme-stats) ---
+    const langsImg = document.getElementById('github-top-langs');
+    if (langsImg) {
+      const bg = isDark ? '1a1a1a' : 'ffffff';
+      const text = isDark ? 'fafafa' : '333333';
+      langsImg.src =
+        'https://github-readme-stats.vercel.app/api/top-langs/' +
+        '?username=Pranestya-GW' +
+        '&layout=compact' +
+        '&hide_title=true' +
+        '&theme=' + (isDark ? 'dark' : 'default') +
+        '&bg_color=' + bg +
+        '&title_color=18d26e' +
+        '&text_color=' + text +
+        '&border_color=' + (isDark ? '333' : 'ddd');
+    }
+  }
+
+  // Load on page load
+  loadGitHubStats();
+
+  // Reload when OS theme changes (user toggles dark/light mode)
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', loadGitHubStats);
+
 })();
