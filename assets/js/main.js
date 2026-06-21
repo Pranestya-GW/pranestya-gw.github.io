@@ -247,4 +247,52 @@
   // Reload when OS theme changes (user toggles dark/light mode)
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', loadGitHubStats);
 
+  /**
+   * Smooth scrolling for all hash links
+   */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const headerHeight = document.querySelector('#header')?.offsetHeight || 60;
+        const top = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10;
+        window.scrollTo({ top, behavior: 'smooth' });
+
+        // Close mobile nav if open
+        if (document.querySelector('.mobile-nav-active')) {
+          mobileNavToogle();
+        }
+      }
+    });
+  });
+
+  /**
+   * Active nav highlighting on scroll using IntersectionObserver.
+   * Updates the .active class on nav links as sections scroll into view.
+   */
+  function initScrollSpy() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('#navmenu a[href^="#"]');
+    if (!sections.length || !navLinks.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, {
+      rootMargin: '-20% 0px -60% 0px',  // Trigger when section is in the top 20-40% of viewport
+      threshold: 0
+    });
+
+    sections.forEach(section => observer.observe(section));
+  }
+
+  initScrollSpy();
+
 })();
