@@ -508,21 +508,27 @@ h6 {
   inset: 0;
   z-index: 999999;
   overflow: hidden;
-  background: var(--background-color);
-  transition: all 0.6s ease-out;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
-#preloader:before {
+body.loaded #preloader {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#preloader::after {
   content: "";
-  position: fixed;
-  top: calc(50% - 30px);
-  left: calc(50% - 30px);
-  border: 6px solid #ffffff;
-  border-color: var(--accent-color) transparent var(--accent-color) transparent;
+  width: 40px;
+  height: 40px;
+  border: 3px solid #18d26e;
+  border-top-color: transparent;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  animation: animate-preloader 1.5s linear infinite;
+  animation: animate-preloader 0.8s linear infinite;
 }
 
 @keyframes animate-preloader {
@@ -1246,7 +1252,29 @@ section,
 }
 
 .portfolio .portfolio-content img {
-  transition: 0.3s;
+  transition: filter 0.5s ease, transform 0.5s ease, opacity 0.5s ease;
+  filter: blur(10px);
+  transform: scale(1.05);
+  opacity: 0;
+}
+
+.portfolio .portfolio-content img.lazy-loaded {
+  filter: blur(0);
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Placeholder shimmer while image loads */
+.portfolio .portfolio-content {
+  background: linear-gradient(110deg, #1a1a1a 30%, #222 50%, #1a1a1a 70%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  min-height: 200px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
 
 .portfolio .portfolio-content .portfolio-info {
@@ -1306,7 +1334,7 @@ section,
   opacity: 1;
 }
 
-.portfolio .portfolio-content:hover img {
+.portfolio .portfolio-content:hover img.lazy-loaded {
   transform: scale(1.1);
 }
 

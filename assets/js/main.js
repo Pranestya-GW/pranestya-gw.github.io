@@ -295,4 +295,59 @@
 
   initScrollSpy();
 
+  /**
+   * Lazy load portfolio images with blur-up effect.
+   * Uses IntersectionObserver to load images only when near viewport,
+   * then fades them in from blurred state.
+   */
+  function initLazyPortfolioImages() {
+    const portfolioImages = document.querySelectorAll('.portfolio-content img');
+    if (!portfolioImages.length) return;
+
+    // First pass: add blur shimmer background size hint
+    portfolioImages.forEach(img => {
+      // Store original src, replace with blank to prevent eager loading
+      const src = img.getAttribute('src');
+      if (!src) return;
+      img.setAttribute('data-src', src);
+      // Set a tiny transparent placeholder to prevent layout shift
+      img.removeAttribute('src');
+      img.style.minHeight = '200px';
+    });
+
+    // IntersectionObserver to trigger load
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          const src = img.getAttribute('data-src');
+          if (src) {
+            // Create a new Image to preload, then swap
+            const tempImg = new Image();
+            tempImg.onload = function() {
+              img.src = src;
+              img.classList.add('lazy-loaded');
+            };
+            tempImg.onerror = function() {
+              // Fallback: set src anyway
+              img.src = src;
+              img.classList.add('lazy-loaded');
+            };
+            tempImg.src = src;
+            img.removeAttribute('data-src');
+          }
+          observer.unobserve(img);
+        }
+      });
+    }, {
+      rootMargin: '200px 0px',  // Start loading 200px before entering viewport
+      threshold: 0.01
+    });
+
+    portfolioImages.forEach(img => observer.observe(img));
+  }
+
+  // Run lazy loading after AOS and DOM are ready
+  document.addEventListener('DOMContentLoaded', initLazyPortfolioImages);
+
 })();
