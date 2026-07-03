@@ -167,37 +167,80 @@
   });
 
   /**
-   * Init isotope layout and filters
+   * Portfolio horizontal scroll carousel — filter + scroll arrows
    */
-  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
-    let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
-    let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
-    let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
+  function initPortfolioCarousel() {
+    const track = document.getElementById('portfolioScrollTrack');
+    const filters = document.querySelectorAll('.portfolio-filters li');
+    const scrollLeft = document.querySelector('.scroll-left');
+    const scrollRight = document.querySelector('.scroll-right');
 
-    let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
-        itemSelector: '.isotope-item',
-        layoutMode: layout,
-        filter: filter,
-        sortBy: sort
+    if (!track) return;
+
+    // Scroll arrow buttons
+    const scrollAmount = 320;
+
+    if (scrollLeft) {
+      scrollLeft.addEventListener('click', () => {
+        track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
       });
+    }
+
+    if (scrollRight) {
+      scrollRight.addEventListener('click', () => {
+        track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      });
+    }
+
+    // Keyboard arrow support when track is focused
+    track.setAttribute('tabindex', '0');
+    track.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      } else if (e.key === 'ArrowRight') {
+        track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
     });
 
-    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-      filters.addEventListener('click', function() {
-        isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
-        this.classList.add('filter-active');
-        initIsotope.arrange({
-          filter: this.getAttribute('data-filter')
+    // Mouse wheel horizontal scroll
+    track.addEventListener('wheel', (e) => {
+      if (e.deltaY !== 0) {
+        e.preventDefault();
+        track.scrollBy({ left: e.deltaY * 2, behavior: 'auto' });
+      }
+    }, { passive: false });
+
+    // Filter tabs
+    if (filters.length) {
+      const cards = track.querySelectorAll('.portfolio-card');
+
+      filters.forEach(filter => {
+        filter.addEventListener('click', () => {
+          // Update active class
+          filters.forEach(f => f.classList.remove('filter-active'));
+          filter.classList.add('filter-active');
+
+          const category = filter.getAttribute('data-filter');
+
+          cards.forEach(card => {
+            if (category === 'all') {
+              card.classList.remove('filtered-out');
+            } else {
+              const cardCats = card.getAttribute('data-category').split(' ');
+              if (cardCats.includes(category)) {
+                card.classList.remove('filtered-out');
+              } else {
+                card.classList.add('filtered-out');
+              }
+            }
+          });
+
+          // Scroll back to start after filter
+          track.scrollTo({ left: 0, behavior: 'smooth' });
         });
-        if (typeof aosInit === 'function') {
-          aosInit();
-        }
-      }, false);
-    });
-
-  });
+      });
+    }
+  }
 
   /**
    * GitHub Stats — dynamic theme switching
@@ -348,6 +391,9 @@
   }
 
   // Run lazy loading after AOS and DOM are ready
-  document.addEventListener('DOMContentLoaded', initLazyPortfolioImages);
+  document.addEventListener('DOMContentLoaded', () => {
+    initLazyPortfolioImages();
+    initPortfolioCarousel();
+  });
 
 })();

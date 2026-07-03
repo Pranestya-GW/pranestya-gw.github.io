@@ -419,7 +419,7 @@
     </section>
 
     <!-- ================================================================= -->
-    <!--  PORTFOLIO SECTION                                                 -->
+    <!--  PORTFOLIO SECTION — Horizontal scroll carousel                    -->
     <!-- ================================================================= -->
     <section id="portfolio" class="portfolio section">
       <div class="container section-title" data-aos="fade-up">
@@ -428,290 +428,294 @@
       </div>
 
       <div class="container">
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-java">Java/XML</li>
-            <li data-filter=".filter-php">PHP/CSS</li>
-            <li data-filter=".filter-net">.NET/CSS</li>
-            <li data-filter=".filter-Pipelines">Pipelines</li>
-            <li data-filter=".filter-Python">Python</li>
-            <li data-filter=".filter-gs">G-Scripts</li>
-          </ul>
+        <!-- Filter tabs -->
+        <ul class="portfolio-filters" data-aos="fade-up" data-aos-delay="100">
+          <li data-filter="all" class="filter-active">All</li>
+          <li data-filter="java">Java/XML</li>
+          <li data-filter="php">PHP/CSS</li>
+          <li data-filter="net">.NET/CSS</li>
+          <li data-filter="pipelines">Pipelines</li>
+          <li data-filter="python">Python</li>
+          <li data-filter="gs">G-Scripts</li>
+        </ul>
 
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-            <!-- Java Projects -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-java">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/SAK_EMKM_2.jpg" class="img-fluid" alt="">
+        <!-- Horizontal scroll wrapper -->
+        <div class="portfolio-scroll-wrapper" data-aos="fade-up" data-aos-delay="200">
+          <button class="scroll-arrow scroll-left" aria-label="Scroll left">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+
+          <div class="portfolio-scroll-track" id="portfolioScrollTrack">
+            <!-- Java -->
+            <div class="portfolio-card" data-category="java">
+              <div class="portfolio-content">
+                <img src="assets/img/portfolio/SAK_EMKM_2.jpg" alt="SAK EMKM">
                 <div class="portfolio-info">
                   <h4>SAK EMKM</h4>
                   <p>Android App for SAK EMKM in Indonesia</p>
-                  <a href="assets/img/portfolio/SAK_EMKM_2.jpg" title="SAK EMKM" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/SAK_EMKM_2.jpg" title="SAK EMKM" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://github.com/Pranestya-GW/LabaRugiSAKEMKM_Siju_Proliman" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-java">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/ABK2.jpg" class="img-fluid" alt="">
+            <div class="portfolio-card" data-category="java">
+              <div class="portfolio-content">
+                <img src="assets/img/portfolio/ABK2.jpg" alt="ABK for Employee">
                 <div class="portfolio-info">
                   <h4>ABK for Employee</h4>
                   <p>Sorting task for Employee in Indonesia</p>
-                  <a href="assets/img/portfolio/ABK2.jpg" title="ABK" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/ABK2.jpg" title="ABK" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://github.com/Pranestya-GW/ABKKelembagaan" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-java">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/SijuTransaction2.jpg" class="img-fluid" alt="">
+            <div class="portfolio-card" data-category="java">
+              <div class="portfolio-content">
+                <img src="assets/img/portfolio/SijuTransaction2.jpg" alt="Transaction Record">
                 <div class="portfolio-info">
                   <h4>Transaction Record MSMEs</h4>
                   <p>An Android app for transaction record in MSMEs</p>
-                  <a href="assets/img/portfolio/SijuTransaction2.jpg" title="Transaction Record" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/SijuTransaction2.jpg" title="Transaction Record" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://github.com/Pranestya-GW/SijuTransaction" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-java">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/Compress2.jpg" class="img-fluid" alt="">
+            <div class="portfolio-card" data-category="java">
+              <div class="portfolio-content">
+                <img src="assets/img/portfolio/Compress2.jpg" alt="Compression">
                 <div class="portfolio-info">
                   <h4>Compression Technique</h4>
                   <p>Netbeans App for Compression Technique</p>
-                  <a href="assets/img/portfolio/Compress2.jpg" title="Compression" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/Compress2.jpg" title="Compression" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://github.com/Pranestya-GW/NetBeand_CompressionTechnique" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
 
-            <!-- PHP Projects -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-php">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/GIS2.jpg" class="img-fluid" alt="">
+            <!-- PHP -->
+            <div class="portfolio-card" data-category="php">
+              <div class="portfolio-content">
+                <img src="assets/img/portfolio/GIS2.jpg" alt="GIS">
                 <div class="portfolio-info">
                   <h4>GIS</h4>
                   <p>Geographic Information System</p>
-                  <a href="assets/img/portfolio/GIS2.jpg" title="GIS" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/GIS2.jpg" title="GIS" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://github.com/Pranestya-GW/PemetaanGIS_PHP_javascript_mySQL" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-php">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/AHP2.jpg" class="img-fluid" alt="">
+            <div class="portfolio-card" data-category="php">
+              <div class="portfolio-content">
+                <img src="assets/img/portfolio/AHP2.jpg" alt="DMS">
                 <div class="portfolio-info">
                   <h4>DMS</h4>
                   <p>Decision Making System for Employee</p>
-                  <a href="assets/img/portfolio/AHP2.jpg" title="AHP" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/AHP2.jpg" title="AHP" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://github.com/Pranestya-GW/AHP_Login" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-php">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/Kripto2.jpg" class="img-fluid" alt="">
+            <div class="portfolio-card" data-category="php">
+              <div class="portfolio-content">
+                <img src="assets/img/portfolio/Kripto2.jpg" alt="Cryptograph">
                 <div class="portfolio-info">
                   <h4>Cryptograph</h4>
                   <p>A Vignere Chipper Cryptograph</p>
-                  <a href="assets/img/portfolio/Kripto2.jpg" title="Cryptograph" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/Kripto2.jpg" title="Cryptograph" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://github.com/Pranestya-GW/CryptoGraph_VignereChiper" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-php">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/Front-ENDHTML&Javascript2.jpg" class="img-fluid" alt="">
+            <div class="portfolio-card" data-category="php">
+              <div class="portfolio-content">
+                <img src="assets/img/portfolio/Front-ENDHTML&Javascript2.jpg" alt="Basic Front End">
                 <div class="portfolio-info">
                   <h4>Basic Front End</h4>
                   <p>Basic Front End Training</p>
-                  <a href="assets/img/portfolio/Front-ENDHTML&Javascript2.jpg" title="Basic Front End" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/Front-ENDHTML&Javascript2.jpg" title="Basic Front End" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://github.com/Pranestya-GW/Front-End_PHP-Function" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-php">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/Fuzzy2.jpg" class="img-fluid" alt="">
+            <div class="portfolio-card" data-category="php">
+              <div class="portfolio-content">
+                <img src="assets/img/portfolio/Fuzzy2.jpg" alt="Fuzzy Logic">
                 <div class="portfolio-info">
                   <h4>Fuzzy Logic</h4>
                   <p>A Fuzzy Logic Web App</p>
-                  <a href="assets/img/portfolio/Fuzzy2.jpg" title="Fuzzy Logic" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/Fuzzy2.jpg" title="Fuzzy Logic" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://github.com/Pranestya-GW/fuzzy_js" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-php">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/Reg2.jpg" class="img-fluid" alt="">
+            <div class="portfolio-card" data-category="php">
+              <div class="portfolio-content">
+                <img src="assets/img/portfolio/Reg2.jpg" alt="Regression">
                 <div class="portfolio-info">
                   <h4>Regression Linier</h4>
                   <p>A Data Mining with Regression Linier method</p>
-                  <a href="assets/img/portfolio/Reg2.jpg" title="Data Mining" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/Reg2.jpg" title="Data Mining" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://github.com/Pranestya-GW/RegLinierForecasting" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
 
-            <!-- .NET Projects -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-net">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/CRUDVB2.jpg" class="img-fluid" alt="">
+            <!-- .NET -->
+            <div class="portfolio-card" data-category="net">
+              <div class="portfolio-content">
+                <img src="assets/img/portfolio/CRUDVB2.jpg" alt="CRUD NET">
                 <div class="portfolio-info">
                   <h4>Basic NET Framework</h4>
                   <p>Basic NET Framework web app</p>
-                  <a href="assets/img/portfolio/CRUDVB2.jpg" title="CRUD NET" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/CRUDVB2.jpg" title="CRUD NET" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://github.com/Pranestya-GW/CRUD_Inventory" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-net">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/VB.NET+Responsive2.jpg" class="img-fluid" alt="">
+            <div class="portfolio-card" data-category="net">
+              <div class="portfolio-content">
+                <img src="assets/img/portfolio/VB.NET+Responsive2.jpg" alt="VB.NET">
                 <div class="portfolio-info">
                   <h4>VB.NET</h4>
                   <p>Basic Responsive training for VB.NET</p>
-                  <a href="assets/img/portfolio/VB.NET+Responsive2.jpg" title="VB.NET" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/VB.NET+Responsive2.jpg" title="VB.NET" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://github.com/Pranestya-GW/VB.NET-CRUD-BootsrapCSS" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-net">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/Tax2.jpg" class="img-fluid" alt="">
+            <div class="portfolio-card" data-category="net">
+              <div class="portfolio-content">
+                <img src="assets/img/portfolio/Tax2.jpg" alt="Tax Calculator">
                 <div class="portfolio-info">
                   <h4>VB.NET Tax System</h4>
                   <p>A Tax System Calculator in Indonesia</p>
-                  <a href="assets/img/portfolio/Tax2.jpg" title="Tax Calculator" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/Tax2.jpg" title="Tax Calculator" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://github.com/Pranestya-GW/TaxProjectVB.git" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
 
-            <!-- Pipeline Projects -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Pipelines filter-Python">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/Schema+docker.png" class="img-fluid" alt="">
+            <!-- Pipelines -->
+            <div class="portfolio-card" data-category="pipelines python">
+              <div class="portfolio-content">
+                <img src="assets/img/portfolio/Schema+docker.png" alt="Schema Docker">
                 <div class="portfolio-info">
                   <h4>Auto Schema Capture</h4>
                   <p>Auto Schema Capture using Docker</p>
-                  <a href="assets/img/portfolio/Schema+docker.png" title="Schema+docker" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/Schema+docker.png" title="Schema+docker" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Pipelines filter-Python">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/Schema+push.png" class="img-fluid" alt="">
+            <div class="portfolio-card" data-category="pipelines python">
+              <div class="portfolio-content">
+                <img src="assets/img/portfolio/Schema+push.png" alt="Schema Push">
                 <div class="portfolio-info">
                   <h4>Schema Capture</h4>
                   <p>Schema Capture using Python, dependencies and artifact</p>
-                  <a href="assets/img/portfolio/Schema+push.png" title="Schema+push" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/Schema+push.png" title="Schema+push" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Pipelines filter-Python">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/SyncICD.png" class="img-fluid" alt="">
+            <div class="portfolio-card" data-category="pipelines python">
+              <div class="portfolio-content">
+                <img src="assets/img/portfolio/SyncICD.png" alt="Sync ICD">
                 <div class="portfolio-info">
                   <h4>Auto Sync ICD10</h4>
                   <p>A Web Scrapper using Python and perform auto insert in database</p>
-                  <a href="assets/img/portfolio/SyncICD.png" title="SyncICD" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/SyncICD.png" title="SyncICD" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Pipelines filter-Python">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/WebScrapper+ETL.png" class="img-fluid" alt="">
+            <div class="portfolio-card" data-category="pipelines python">
+              <div class="portfolio-content">
+                <img src="assets/img/portfolio/WebScrapper+ETL.png" alt="WebScrapper ETL">
                 <div class="portfolio-info">
                   <h4>WebScrapper and ETL</h4>
                   <p>Performing Web Scrapper using selenium and ETL the result in excel</p>
-                  <a href="assets/img/portfolio/WebScrapper+ETL.png" title="WebScrapper+ETL" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/WebScrapper+ETL.png" title="WebScrapper+ETL" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
 
-            <!-- Python Projects -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Python">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/Automaton.png" class="img-fluid" alt="">
+            <!-- Python -->
+            <div class="portfolio-card" data-category="python">
+              <div class="portfolio-content">
+                <img src="assets/img/portfolio/Automaton.png" alt="Automation">
                 <div class="portfolio-info">
                   <h4>Automation</h4>
                   <p>Generating SQL Query to perform Data Cleaning</p>
-                  <a href="assets/img/portfolio/Automaton.png" title="Automation" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/Automaton.png" title="Automation" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Python">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/biznetgio-spy.png" class="img-fluid" alt="">
+            <div class="portfolio-card" data-category="python">
+              <div class="portfolio-content">
+                <img src="assets/img/portfolio/biznetgio-spy.png" alt="BiznetGIO Analyzer">
                 <div class="portfolio-info">
                   <h4>BiznetGIO S3 Folder Analyzer</h4>
-                  <p>Scrapping using Credentials of biznetGIO object storage to look at Structure and size of folder inside</p>
-                  <a href="assets/img/portfolio/biznetgio-spy.png" title="BiznetGIO-S3-Analyzer" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <p>Scrapping using Credentials of biznetGIO object storage</p>
+                  <a href="assets/img/portfolio/biznetgio-spy.png" title="BiznetGIO-S3-Analyzer" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
-
-            <!-- NEW: Data Dummy Generation -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Python">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/Data_Dummy_Generation.png" class="img-fluid" alt="">
+            <div class="portfolio-card" data-category="python">
+              <div class="portfolio-content">
+                <img src="assets/img/portfolio/Data_Dummy_Generation.png" alt="Data Dummy Generator">
                 <div class="portfolio-info">
                   <h4>Data Dummy Generator</h4>
-                  <p>Auto-generate realistic INSERT statements from DDL files — 40+ PostgreSQL data types</p>
-                  <a href="assets/img/portfolio/Data_Dummy_Generation.png" title="Data Dummy Generator" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <p>Auto-generate INSERT statements from DDL — 40+ PostgreSQL types</p>
+                  <a href="assets/img/portfolio/Data_Dummy_Generation.png" title="Data Dummy Generator" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://github.com/Pranestya-GW/generate_data" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
-
-            <!-- NEW: Hash Converter -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Python">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/Hash_Converter.png" class="img-fluid" alt="">
+            <div class="portfolio-card" data-category="python">
+              <div class="portfolio-content">
+                <img src="assets/img/portfolio/Hash_Converter.png" alt="Hash Converter">
                 <div class="portfolio-info">
-                  <h4>Hash Converter — Enterprise Edition</h4>
-                  <p>Batch-compute 15+ hash algorithms (MD5, SHA-256, BLAKE2, HMAC) & export to Excel</p>
-                  <a href="assets/img/portfolio/Hash_Converter.png" title="Hash Converter" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <h4>Hash Converter — Enterprise</h4>
+                  <p>Batch-compute 15+ hash algorithms & export to Excel</p>
+                  <a href="assets/img/portfolio/Hash_Converter.png" title="Hash Converter" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://github.com/Pranestya-GW/md5-converter" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
-
-            <!-- NEW: S3 Cloud Scanner -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Python">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/s3_cloud_analyzer.png" class="img-fluid" alt="">
+            <div class="portfolio-card" data-category="python">
+              <div class="portfolio-content">
+                <img src="assets/img/portfolio/s3_cloud_analyzer.png" alt="S3 Cloud Scanner">
                 <div class="portfolio-info">
                   <h4>S3 Cloud Scanner</h4>
-                  <p>Multi-cloud folder size analyzer — AWS S3, MinIO, R2, B2, Wasabi + 5 export formats</p>
-                  <a href="assets/img/portfolio/s3_cloud_analyzer.png" title="S3 Cloud Scanner" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <p>Multi-cloud folder analyzer — AWS, MinIO, R2, B2 + 5 formats</p>
+                  <a href="assets/img/portfolio/s3_cloud_analyzer.png" title="S3 Cloud Scanner" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://github.com/Pranestya-GW/s3-cloud-scanner" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
 
             <!-- G-Scripts -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-gs">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/BotJSM.png" class="img-fluid" alt="">
+            <div class="portfolio-card" data-category="gs">
+              <div class="portfolio-content">
+                <img src="assets/img/portfolio/BotJSM.png" alt="Bot Telegram">
                 <div class="portfolio-info">
                   <h4>Bot Telegram auto input JSM</h4>
                   <p>Perform input to sheet using telegram bot</p>
-                  <a href="assets/img/portfolio/BotJSM.png" title="Bot-Input-Telegram" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/BotJSM.png" title="Bot-Input-Telegram" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
-          </div><!-- End Portfolio Container -->
-        </div>
+          </div><!-- End scroll track -->
+
+          <button class="scroll-arrow scroll-right" aria-label="Scroll right">
+            <i class="bi bi-chevron-right"></i>
+          </button>
+        </div><!-- End scroll wrapper -->
       </div>
     </section>
 
